@@ -5,6 +5,7 @@
   --white-color: #ffffff;
   --background-color-secondary: #f5f4fa;
   --background-color-accent: #2f303a;
+  --color-icon: #AFB1B8;
 }
 
 html {
@@ -119,16 +120,21 @@ img {
   margin-bottom: 0px;
   margin-top: 0px;
   padding: 0px;
-
   list-style: none;
 }
 
-.contacts-lis-item:not(:last-child) {
-  margin-right: 50px;
+.contacts-list-icon {
+  display: flex;
+  margin-right: 10px;
 }
 
+.contacts-lis-item:not(:last-child) {
+  margin-right: 30px;
+}
 
 .contacts-list .link {
+  display: flex;
+  align-items: center;
   color: var(--primary-text-color);
   text-decoration: none;
   font-weight: 500;
@@ -154,9 +160,18 @@ img {
 }
 
 .section-main {
-  text-align: center;
-  background-color: var(--background-color-accent);
+  max-width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
   padding: 200px 0;
+  text-align: center;
+
+  background-color: #C4C4C4;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+  url("../images/hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 /* Кнопки общие  */
@@ -191,8 +206,8 @@ button {
 }
 
 /* Наши преимущества */
-.advantages,
-.portfolio {
+
+.visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -205,10 +220,8 @@ button {
   overflow: hidden;
 }
 
-
 .advantages-list {
   display: flex;
-  justify-content: space-between;
   padding: 0px;
   margin: 0px;
 
@@ -217,6 +230,17 @@ button {
 
 .advantages-list-item:not(:last-child) {
   margin-right: 30px;
+}
+
+.advantages-list-item .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  background-color: var(--background-color-secondary);
+  border-radius: 4px;
+  margin-bottom: 30px;
+  margin-top: 0px;
 }
 
 .advantages-title {
@@ -240,7 +264,6 @@ button {
 }
 
 
-
 /* Чем мы занимаемся */
 
 .section.activity {
@@ -257,7 +280,6 @@ button {
   margin-bottom: 50px;
 }
 
-
 .activity_list {
   display: flex;
   justify-content: space-between;
@@ -273,7 +295,6 @@ button {
   background-color: var(--background-color-secondary);
 }
 
-
 .team-list {
   display: flex;
   padding: 0px;
@@ -285,7 +306,6 @@ button {
 .team-list > .team-card:not(:last-child) {
   margin-right: 30px;
 }
-
 
 .team-card {
   background: var(--white-color); 
@@ -314,22 +334,97 @@ button {
   line-height: 1.19;
   text-align: center;
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 16px;
 }
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+.actions-item .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  width: 44px;
+  height: 44px;
+  background-color: var(--white-color);
+  border: none;
+  border-radius: 50%;
+  color: var(--color-icon);
+}
+
+.button-icon {
+  fill: currentColor;
+}
+
+.actions-item .icon:hover,
+.actions-item .icon:focus {
+  background-color: var(--accent-color);
+  color: var(--white-color);
+}
+
+.actions > .actions-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+
+/* Наши клиенты */
+
+.clients {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+.clients-item .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  width: 170px;
+  height: 92px;
+  background-color: var(--white-color);
+  border: 1px solid var(--color-icon);
+  border-radius: 4px;
+  color: var(--color-icon);
+}
+
+.button-icon {
+  fill: currentColor;
+}
+
+.clients-item .icon:hover,
+.clients-item .icon:focus {
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+.clients > .clients-item:not(:last-child) {
+  margin-right: 30px;
+}
+
 
 
 /* Подвал сайта */
 
 .logo-footer {
   display: flex;
-  margin-bottom: 20px;
-
   color: var(--white-color);
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
   text-decoration: none;
+  margin-right: 142px;
 }
 
 .logo-web-footer {
@@ -362,7 +457,6 @@ button {
   margin-bottom: 9px;
 }
 
-
 .contacts-list-footer .address-link:hover,
 .contacts-list-footer .address-link:focus {
   color: var(--accent-color);
@@ -373,19 +467,66 @@ button {
   color: var(--accent-color);
 }
 
+
 .section-footer {
   background-color: var(--background-color-accent);
   padding-top: 60px;
   padding-bottom: 60px;
 }
 
+.join-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white-color);
+  margin: 0px;
+  align-items: flex-end;
+}
+
+.container-logo {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.container-address-footer {
+  display: inline;
+  display: flex;
+}
+
+.container-address {
+  margin-right: 70px;
+}
+
+.actions-item .icon-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  color: var(--white-color);
+}
+
+.actions-item .icon-footer:hover,
+.actions-item .icon-footer:focus {
+  background-color: var(--accent-color);
+}
+
 
 /* Стили для страницы Портфолио */
+
+
 .button-list,
 .work-list {
   list-style: none;
   padding: 0px;
-
 }
 
 /* Фильтры поиска */
@@ -403,7 +544,6 @@ button {
   margin-right:
    8px;
 }
-
 
 .button.secondary:hover,
 .button.secondary:focus {
@@ -431,7 +571,6 @@ button {
   list-style: none;
 }
 
-
 .work-list > .item-card {
   flex-basis: calc((100% - 60px) / 3);
   margin-right: 30px;
@@ -447,14 +586,21 @@ button {
 }
 
 .item-card {
+  background-color: var(--white-color);
   border: 1px solid #EEEEEE;
   box-sizing: border-box;
+}
+
+.work-list .item-card:hover,
+.work-list .item-card:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+  0px 4px 4px rgba(0, 0, 0, 0.06),
+  1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .card-content {
   padding: 20px 24px;
 }
-
 
 /* Примеры работ */
 .work-title {
